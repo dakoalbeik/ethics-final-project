@@ -92,6 +92,8 @@ function goNextPage() {
         }
         currentLocation++;
     }
+
+    console.log(currentLocation);
 }
 
 // function goPrevPage() {
@@ -143,10 +145,12 @@ function goPrevPage() {
                 // if location is anywhere in between, we remove
                 // the flipped class from the corresponding page
                 papers[currentLocation - 2].classList.remove("flipped");
-                papers[currentLocation - 2].style.zIndex = currentLocation - 1;
+                // set the z-index of the element to the amount of pages - the index of the page in the array
+                papers[currentLocation - 2].style.zIndex = papers.length - (currentLocation - 2);
                 break;
         }
 
         currentLocation--;
     }
+    console.log(currentLocation);
 }
