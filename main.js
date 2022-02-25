@@ -10,6 +10,10 @@ const book = document.querySelector("#book");
 // get the papers from the DOM
 const papers = [...document.querySelectorAll('.paper')];
 
+/* Paper stack order */
+papers.forEach((paper, idx)=>{
+    paper.style.zIndex = papers.length - idx;
+})
 
 // Event Listener
 prevBtn.addEventListener("click", goPrevPage);

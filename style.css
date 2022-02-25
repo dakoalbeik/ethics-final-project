@@ -143,18 +143,6 @@ i {
     color: gray;
 }
 
-/* Paper stack order */
-#p1 {
-    z-index: 3;
-}
-
-#p2 {
-    z-index: 2;
-}
-
-#p3 {
-    z-index: 1;
-}
 
 .book-cover .front-content,
 .book-cover .back-content{
