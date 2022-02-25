@@ -129,7 +129,7 @@ function goPrevPage() {
                 // and remove the flipped class from the first page
                 closeBook(true);
                 papers[0].classList.remove("flipped");
-                papers[0].style.zIndex = 3;
+                papers[0].style.zIndex = papers.length;
                 break;
             case papers.length + 1:
                 // if location is the last paper + 1
