@@ -90,25 +90,57 @@ function goNextPage() {
     }
 }
 
+// function goPrevPage() {
+//     if(currentLocation > 1) {
+//         switch(currentLocation) {
+//             case 2:
+//                 closeBook(true);
+//                 paper1.classList.remove("flipped");
+//                 paper1.style.zIndex = 3;
+//                 break;
+//             case 3:
+//                 paper2.classList.remove("flipped");
+//                 paper2.style.zIndex = 2;
+//                 break;
+//             case 4:
+//                 openBook();
+//                 paper3.classList.remove("flipped");
+//                 paper3.style.zIndex = 1;
+//                 break;
+//             default:
+//                 throw new Error("unkown state");
+//         }
+
+//         currentLocation--;
+//     }
+// }
+
 function goPrevPage() {
+    // if currentLocation is 1 then we can't go back
     if(currentLocation > 1) {
         switch(currentLocation) {
+            
             case 2:
+                // if location is 2, then we close the book
+                // and remove the flipped class from the first page
                 closeBook(true);
-                paper1.classList.remove("flipped");
-                paper1.style.zIndex = 3;
+                papers[0].classList.remove("flipped");
+                papers[0].style.zIndex = 3;
                 break;
-            case 3:
-                paper2.classList.remove("flipped");
-                paper2.style.zIndex = 2;
-                break;
-            case 4:
+            case papers.length + 1:
+                // if location is the last paper + 1
+                // then we open the book and remove the flipped class
+                // from the last page
                 openBook();
-                paper3.classList.remove("flipped");
-                paper3.style.zIndex = 1;
+                papers[papers.length - 1].classList.remove("flipped");
+                papers[papers.length - 1].style.zIndex = 1;
                 break;
             default:
-                throw new Error("unkown state");
+                // if location is anywhere in between, we remove
+                // the flipped class from the corresponding page
+                papers[currentLocation - 2].classList.remove("flipped");
+                papers[currentLocation - 2].style.zIndex = currentLocation - 1;
+                break;
         }
 
         currentLocation--;
