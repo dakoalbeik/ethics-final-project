@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    font-family: sans-serif;
+    font-family: 'Playfair Display', serif;
     background: linear-gradient(0deg, rgb(7, 1, 0) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 100%), url('./img/vintage-wallpaper.jpg');
     background-size: contain; 
 }
@@ -63,9 +63,6 @@ i.fas:hover{
     left: 0;
     perspective: 1500px;
     
-    
-    
-
 }
 
 .front,
@@ -88,8 +85,7 @@ i.fas:hover{
 }
 
 .back {
-    z-index: 0;
-    
+    z-index: 0;   
 }
 
 .front-content,
@@ -112,6 +108,12 @@ i.fas:hover{
 .front-content{
     /* top-left | top-right | bottom-right | bottom-left */
     border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.page-number{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
 }
 
 /* Paper flip effect */
