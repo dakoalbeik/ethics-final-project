@@ -38,25 +38,53 @@ function closeBook(isAtBeginning) {
     nextBtn.style.transform = "translateX(0px)";
 }
 
+// function goNextPage() {
+//     if(currentLocation < maxLocation) {
+//         switch(currentLocation) {
+//             case 1:
+//                 openBook();
+//                 paper1.classList.add("flipped");
+//                 paper1.style.zIndex = 1;
+//                 break;
+//             case 2:
+//                 paper2.classList.add("flipped");
+//                 paper2.style.zIndex = 2;
+//                 break;
+//             case 3:
+//                 paper3.classList.add("flipped");
+//                 paper3.style.zIndex = 3;
+//                 closeBook(false);
+//                 break;
+//             default:
+//                 throw new Error("unkown state");
+//         }
+//         currentLocation++;
+//     }
+// }
+
 function goNextPage() {
     if(currentLocation < maxLocation) {
         switch(currentLocation) {
             case 1:
+                // if it's the first page, then open the book
+                // and add class flipped to first page
                 openBook();
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
+                papers[0].classList.add("flipped");
+                papers[0].style.zIndex = 1;
                 break;
-            case 2:
-                paper2.classList.add("flipped");
-                paper2.style.zIndex = 2;
-                break;
-            case 3:
-                paper3.classList.add("flipped");
-                paper3.style.zIndex = 3;
+            case papers.length:
+                // if it's the last page, then add the flipped class
+                // to the last page and close the book
+                papers[papers.length - 1].classList.add("flipped");
+                papers[papers.length - 1].style.zIndex = papers.length;
                 closeBook(false);
                 break;
             default:
-                throw new Error("unkown state");
+                // if any other page in between, add the flipped class
+                // to the particular page and change the zIndex
+                papers[currentLocation - 1].classList.add('flipped');
+                papers[currentLocation - 1].style.zIndex = currentLocation;
+                break;
         }
         currentLocation++;
     }
