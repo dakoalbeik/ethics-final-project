@@ -34,8 +34,9 @@ h2{
 }
 
 p{
-    text-align: center;
     font-family: 'Playfair Display', serif;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
 }
 
 i.fas{
@@ -90,13 +91,18 @@ i.fas:hover{
 
 .front-content,
 .back-content {
+    text-align: justify;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-image: url('./img/book-paper.jpg');
-    padding: 1rem;
+    padding: 2rem;
+    font-size: .9rem;
+}
+
+.front-content#book-title{
+    justify-content: center;
 }
 
 .back-content {
