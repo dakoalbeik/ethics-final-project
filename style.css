@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+a{
+    font-size: .75rem;
+}
+
 body {
     height: 100vh;
     display: flex;
@@ -98,11 +102,17 @@ i.fas:hover{
     flex-direction: column;
     background-image: url('./img/book-paper.jpg');
     padding: 2rem;
-    font-size: .9rem;
+    font-size: .85rem;
 }
 
 .front-content#book-title{
     justify-content: center;
+}
+
+.back-content#book-end h2{
+    margin-top: auto;
+    color: rgb(255, 118, 118);
+    font-size: .8rem;
 }
 
 .back-content {
